@@ -15,6 +15,7 @@ class CreateProducts < ActiveRecord::Migration
       t.column  :register_id, :integer    # 登记人
       t.timestamps
     end
+    add_index :products,  :user_id
   end
 
   def self.down
