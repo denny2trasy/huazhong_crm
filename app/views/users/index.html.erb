@@ -1,0 +1,12 @@
+<br/>
+<div class="right_align">
+    <%= link_to("create",new_user_path,{:class=>"popup"})%>
+</div>
+<h3>员工列表</h3>
+<%=notice%>
+<%= table_for(@users) {|item,col|
+    col.add :name,item.name
+    col.add :login,item.login
+    col.add :action,  link_to("edit",edit_user_path(item)) + link_to("delete",user_path(item),{:method=>:delete})  
+}%>
+

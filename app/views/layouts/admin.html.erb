@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+  <head>
+    <title>Hua Zhong CRM</title>
+    <%= javascript_include_tag :all%>
+    <%= stylesheet_link_tag 'frame'%>
+  </head>
+  <body>
+    
+    <div id="idp_head">
+      <div class="user">
+        <%= link_to "logout",session_path(1),:method=>:delete%>
+        </div>
+     </div>
+    <div class="hmenu2">
+        <ul>
+          <li><%= link_to "产品", "admin_points_path"%></li>
+          <li><%= link_to "出库单", "admin_point_rules_path" %></li>
+          <li><%= link_to "入库单", "admin_point_statuses_path"%></li>          
+          <li><%= link_to "员工", "users_path"%></li>
+          <li><%= link_to "原料", "users_path"%></li>
+          <li><%= link_to "品牌", admin_brands_path%></li>
+          <li><%= link_to "数据字典", ""%></li>
+        </ul>
+     </div>
+
+      
+      <div id="content">
+        <%= yield %>
+      </div>
+  </body></html>

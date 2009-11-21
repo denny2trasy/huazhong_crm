@@ -1,0 +1,13 @@
+<br/>
+<div class="right_align">
+    <%= link_to("create",new_admin_brand_path,{:class=>"popup"})%>
+</div>
+<h3>品牌列表</h3>
+<%=notice%>
+<%= table_for(@brands) {|item,col|
+    col.add :name,item.name
+    col.add :style,item.style
+    col.add :capacity,  item.capacity
+    col.add :desc,  item.desc
+    col.add :action,  link_to("edit",edit_admin_brand_path(item)) + link_to("delete",admin_brand_path(item),{:method=>:delete})  
+}%>

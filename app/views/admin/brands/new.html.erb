@@ -1,0 +1,16 @@
+<div> 
+  <h1>创建新品牌</h1> 
+
+      <% form_for :brand, :url=>admin_brands_path() do |f| %> 
+
+        <p>名称      <%= f.text_field :name  %></p> 
+  
+        <p>型号       <%= f.text_field :style %></p> 
+  
+        <p>排量       <%= f.text_field :capacity %></p>
+
+        <p>备注       <%= f.text_area :desc,:size=>"50*5" %></p>
+  
+              <p><%= submit_tag "create"%> </p> 
+            <% end %> 
+</div> 
