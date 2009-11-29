@@ -1,0 +1,16 @@
+<div> 
+  <h1>创建设备</h1> 
+
+      <% form_for :equipment, :url=>admin_equipments_path(:workshop_id=>@workshop.id) do |f| %> 
+
+        <p>名称      <%= f.text_field :name  %></p> 
+        <p>负责人      <%= f.select :user_id,  User.select_list  %></p> 
+        <p>类别      <%= f.select :e_class,ListItem.select_list_of("e_class")  %></p> 
+        <p>购买地      <%= f.text_field :from  %></p> 
+        <p>购买日期      <%= date_select(:temp,:at)  %></p> 
+        <p>说明      <%= f.text_area :desc,:size => "50＊5"  %></p> 
+  
+ 
+              <p><%= submit_tag "create"%> </p> 
+            <% end %> 
+</div> 

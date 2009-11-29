@@ -1,0 +1,31 @@
+InPlaceDropDownListEditor
+=========================
+
+This plugin is to help make in place editor easier to use.
+1) work with boolean columns
+2) drop down list supported
+3) customized text supported
+4) default 'click' text supported
+
+
+Example
+=======
+
+book.title is string
+book.sold is boolean
+
+<%= in_place_editor_field :book , :title %>
+<%= in_place_editor_field :book , :sold %>
+<%= in_place_editor_field :book , :title ,{},{:collection => ["Kevin","Tony"]}%>
+<%= in_place_editor_field :book , :title ,{},{:collection => [[0,"Kevin"],[1,"Tony"]]}%>
+with customized text:
+<%= in_place_editor_field :book , :title ,{:text => 'your language'},{:collection => ['English','Chinese']}%>
+
+To work as a textilized in_place_editor:
+<%= in_place_editor_field :book ,:body ,
+                          {:text => (textilize @book.body)},
+                          {:load_text_url=>{:action=>"get_book_body",:id=>@book},:cols=>45,:rows=>15}%>
+
+
+
+Copyright (c) 2007 [Kevin Yang], released under the MIT license

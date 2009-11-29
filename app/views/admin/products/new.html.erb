@@ -1,0 +1,17 @@
+<div> 
+  <h1>创建新产品</h1> 
+
+      <% form_for :product, :url=>admin_products_path() do |f| %> 
+
+        <p>名称      <%= f.text_field :name %></p> 
+        <p>客户      <%= f.text_field :customer_name%></p>
+        <p>客户电话      <%= f.text_field :customer_phone%></p>  
+        <p>产品类别       <%= f.select :p_class,ListItem.select_list_of("p_class") %></p> 
+        <p>状态       <%= f.select :status,ListItem.select_list_of("status") %></p> 
+        <p>来件日期       <%= date_select :temp,:start %></p>
+        <p>负责人       <%= f.select :user_id,User.select_list %></p>
+
+  
+              <p><%= submit_tag "保存"%> </p> 
+            <% end %> 
+</div> 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
+#  include AuthenticatedSystem
   
   def index
     @users = User.all
@@ -11,8 +11,9 @@ class UsersController < ApplicationController
   end
   
 #  def create
-##    logout_keeping_session!
-#    user = User.new(params[:user])
+#    encrypt_pwd = encrypt(params[:user][:password])
+#    salt = 
+#    user = User.new(params[:user].merge({:crypted_password=>encrypt_pwd}))
 #    debugger
 #    flash[:notice] = (user and user.save and user.errors.empty?) ? "Successful" : "Fail"
 #    redirect_to users_path

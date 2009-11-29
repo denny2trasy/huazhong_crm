@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   layout "admin"
-
+  def current_user
+    User.find_by_login("admin")
+  end
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 end

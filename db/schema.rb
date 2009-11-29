@@ -9,12 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091121022028) do
+ActiveRecord::Schema.define(:version => 20091129091026) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
     t.string   "style"
-    t.integer  "capacity"
+    t.string   "capacity"
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20091121022028) do
     t.string   "name"
     t.integer  "user_id"
     t.integer  "workshop_id"
-    t.string   "class"
+    t.string   "e_class"
     t.string   "buy_at"
     t.string   "from"
     t.text     "desc"
@@ -46,19 +46,38 @@ ActiveRecord::Schema.define(:version => 20091121022028) do
   end
 
   create_table "list_items", :force => true do |t|
-    t.string   "class"
+    t.integer  "list_type_id"
     t.string   "name"
     t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "list_types", :force => true do |t|
+    t.string   "name"
+    t.string   "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "value"
+  end
+
   create_table "materials", :force => true do |t|
     t.string   "name"
-    t.string   "type"
-    t.integer  "class"
+    t.integer  "m_type"
+    t.integer  "m_class"
     t.integer  "sub_class"
-    t.float    "diameter"
+    t.integer  "diameter"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", :force => true do |t|
+    t.integer  "product_id"
+    t.float    "amount"
+    t.integer  "pay_method"
+    t.datetime "pay_at"
+    t.string   "pay_man"
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -69,7 +88,7 @@ ActiveRecord::Schema.define(:version => 20091121022028) do
     t.text     "desc"
     t.string   "customer_name"
     t.string   "customer_phone"
-    t.integer  "class"
+    t.integer  "p_class"
     t.integer  "user_id"
     t.float    "predict_fee"
     t.datetime "started_at"
@@ -79,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20091121022028) do
     t.integer  "register_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status"
   end
 
   add_index "products", ["user_id"], :name => "index_products_on_user_id"

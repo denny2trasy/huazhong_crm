@@ -1,0 +1,14 @@
+<div> 
+  <h1>更新产品</h1> 
+
+      <% form_for :product, :url=>admin_product_path(@product),:html=>{:method => :put} do |f| %> 
+
+        <p>产品类别       <%= f.select :p_class,ListItem.select_list_of("p_class") %></p> 
+        <p>状态       <%= f.select :status,ListItem.select_list_of("status") %></p> 
+        <p>完成日期       <%= date_select(:temp,:finish) %></p>
+        <p>负责人       <%= f.select :user_id,User.select_list %></p>
+
+  
+              <p><%= submit_tag "create"%> </p> 
+            <% end %> 
+</div> 

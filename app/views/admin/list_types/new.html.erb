@@ -1,0 +1,11 @@
+<div> 
+  <h1>创建列表类别</h1> 
+
+      <% form_for :list_type, :url=>admin_list_types_path do |f| %> 
+
+        <p>名称      <%= f.text_field :name  %></p> 
+  
+        <p>值      <%= f.text_field :value  %></p> 
+              <p><%= submit_tag "create"%> </p> 
+            <% end %> 
+</div> 

@@ -1,0 +1,26 @@
+dt{padding:3px 0;margin-top:5px;}
+dd{padding-left:20px;}
+#toolbar a{padding:3px 5px;}
+#mocker{padding:10px 20px;}
+#mocker dt{font-weight:bold;color:#555;}
+#mocker dl{margin-bottom:10px;}
+#actions{padding:10px;}
+#actions li{float:left;padding:0 5px;border-right:1px solid silver;}
+#status{padding:5px;}
+.title{padding-left:15px;font-weight:normal;padding-right:5px;}
+
+.info table, .info tr,.info th, .info td{border:1px solid silver;border-collapse:collapse;}
+.info th{background:#eee;width:90px;text-align:right;}
+.info th, .info td{padding:5px; }
+.info td{width:250px;}
+
+.main300 textarea{width:80%;height:120px;}
+.event_logs li{border-bottom:1px dotted silver;padding:5px;}
+.event_logs .title{background:#eee; width:50px;}
+
+.user{line-height:16px;height:16px}
+
+.i_link{display:block;}
+.list_table .title{text-align:right;}
+.mark_spot_flex{height:550px;margin-top:5px;}
+

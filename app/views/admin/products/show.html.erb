@@ -1,0 +1,22 @@
+<br/>
+<br/>
+<br/>
+<%= render :partial => "info" %>
+
+<div class="main300">
+  <% view_tabs do %>
+    <% view_tab "配件情况" do %>
+      <div>
+        <%= render :partial => "accessory"%>
+      </div>
+    <% end %>
+    
+    <% view_tab "费用情况" do %>
+      <div>
+        <%= render :partial => "payment" %>
+      </div>
+    <% end %>
+    
+
+  <% end %>
+</div>

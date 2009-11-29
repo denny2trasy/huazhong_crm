@@ -1,0 +1,14 @@
+
+
+<div class="right_align">
+    <%= link_to("create",new_admin_list_type_path,{:class=>"popup"})%>
+</div>
+<h3>下拉列表</h3>
+<%=notice%>
+<%= table_for(@list_types) {|item,col|
+    @list_type = item
+    col.add :name,in_place_editor_field(:list_type,:name)
+    col.add :value,in_place_editor_field(:list_type,:value)
+    col.add :items, link_to("#{item.list_items.size} items",admin_list_items_path(:type_id=>item.id))
+    col.add :action,  link_to("delete",admin_list_type_path(item),{:method=>:delete})  
+}%>

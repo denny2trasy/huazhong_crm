@@ -4,6 +4,7 @@
     <title>Hua Zhong CRM</title>
     <%= javascript_include_tag :all%>
     <%= stylesheet_link_tag 'frame'%>
+    <%= stylesheet_link_tag 'base'%>
   </head>
   <body>
     
@@ -14,13 +15,14 @@
      </div>
     <div class="hmenu2">
         <ul>
-          <li><%= link_to "产品", "admin_points_path"%></li>
-          <li><%= link_to "出库单", "admin_point_rules_path" %></li>
-          <li><%= link_to "入库单", "admin_point_statuses_path"%></li>          
+          <li><%= link_to "产品", admin_products_path%></li>
+          <li><%= link_to "出库单", admin_output_bills_path %></li>
+          <li><%= link_to "入库单", admin_input_bills_path%></li>          
           <li><%= link_to "员工", "users_path"%></li>
-          <li><%= link_to "原料", "users_path"%></li>
+          <li><%= link_to "车间", admin_workshops_path%></li>
+          <li><%= link_to "原料", admin_materials_path%></li>
           <li><%= link_to "品牌", admin_brands_path%></li>
-          <li><%= link_to "数据字典", ""%></li>
+          <li><%= link_to "数据字典", admin_list_types_path%></li>
         </ul>
      </div>
 

@@ -5,8 +5,16 @@ class User < ActiveRecord::Base
   has_many  :work_sheets
   has_one  :workshops
   has_one  :equipments
+  before_save :encrypt_password
   
   
+  def self.select_list
+    list = [nil,nil]
+    User.all.each do |u|
+      list << [u.name,u.id]
+    end
+    list
+  end
   
   
   
@@ -28,7 +36,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+#  attr_accessible :login, :email, :name, :password, :password_confirmation
 
 
 
@@ -54,7 +62,32 @@ class User < ActiveRecord::Base
   end
 
 
+
   
+  
+  
+  private
+  
+  
+#  def encrypt(password)
+#    self.class.password_digest(password, salt)
+#  end
+#  
+#  def authenticated?(password)
+#    crypted_password == encrypt(password)
+#  end
+#  def make_token
+#    secure_digest(Time.now, (1..10).map{ rand.to_s })
+#  end  
+#  # before filter 
+#  def encrypt_password
+#    return if password.blank?
+#    self.salt = self.class.make_token if new_record?
+#    self.crypted_password = encrypt(password)
+#  end
+#  def password_required?
+#    crypted_password.blank? || !password.blank?
+#  end  
 
   
 end

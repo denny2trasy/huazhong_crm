@@ -1,0 +1,17 @@
+
+
+<div class="right_align">
+    <%= link_to("create",new_admin_equipment_path(:workshop_id=>@workshop.id),{:class=>"popup"})%>
+</div>
+<h3><%=@workshop.name%> 列表内容</h3>
+<%=notice%>
+<%= table_for(@equipments) {|item,col|
+    @equipment = item
+    col.add "名称", in_place_editor_field(:equipment,:name)
+    col.add "负责人" , item.user.login
+    col.add "类别",   ListItem.name_by_type_and_value("e_class",item.e_class)
+    col.add "购买地", in_place_editor_field(:equipment,:from)
+    col.add "购买日期", in_place_editor_field(:equipment,:buy_at)
+    col.add "说明", in_place_editor_field(:equipment,:desc)
+    col.add :action,  link_to("delete",admin_equipment_path(:workshop_id=>@workshop.id,:id=>item.id),{:method=>:delete})  
+}%>

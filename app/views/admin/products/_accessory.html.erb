@@ -1,0 +1,12 @@
+
+<div>
+<%= table_for(@product.delivery_vouchers) {|item,col|
+    col.add "配件名", item.material.show_name
+    col.add "品牌", item.brand.show_name
+    col.add "个数",    item.amount
+    col.add "领件人", item.receiver.try(:login)
+    col.add "领件日期", item.created_at.try(:strftime,"%Y-%m-%d")    
+    col.add "备注",  item.desc
+
+}%>
+</div>

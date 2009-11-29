@@ -1,0 +1,13 @@
+<div> 
+  <h1>创建支付记录</h1> 
+
+      <% form_for :payment, :url=>admin_payments_path(:product_id=>@product.id) do |f| %> 
+
+        <p>金额      <%= f.text_field :amount  %></p> 
+        <p>方式      <%= f.select :pay_method,ListItem.select_list_of("pay_method")  %></p>
+        <p>日期      <%= date_select(:temp,:at) %>
+        <p>付费人     <%= f.text_field :pay_man  %></p> 
+ 
+              <p><%= submit_tag "create"%> </p> 
+            <% end %> 
+</div> 

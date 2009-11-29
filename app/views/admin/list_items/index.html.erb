@@ -1,0 +1,13 @@
+
+
+<div class="right_align">
+    <%= link_to("create",new_admin_list_item_path(:type_id=>@type.id),{:class=>"popup"})%>
+</div>
+<h3><%=@type.name%> 列表内容</h3>
+<%=notice%>
+<%= table_for(@list_items) {|item,col|
+    @list_item = item
+    col.add "名称", in_place_editor_field(:list_item,:name)
+    col.add "代号", in_place_editor_field(:list_item,:value)
+    col.add :action,  link_to("delete",admin_list_item_path(:type_id=>@type.id,:id=>item.id),{:method=>:delete})  
+}%>

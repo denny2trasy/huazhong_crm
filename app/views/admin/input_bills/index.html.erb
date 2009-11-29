@@ -1,0 +1,18 @@
+
+
+<div class="right_align">
+    <%= link_to("create",new_admin_input_bill_path,{:class=>"popup"})%>
+</div>
+<h3>入库单列表</h3>
+<%=notice%>
+<%= table_for(@warehouse_vouchers) {|item,col|
+    @warehouse_voucher = item
+    col.add :material, item.material.show_name
+    col.add :brand, item.brand.show_name
+    col.add :amount,    in_place_editor_field(:warehouse_voucher,:amount)
+    col.add :unit_price,    in_place_editor_field(:warehouse_voucher,:unit_price)
+    col.add :desc,  item.desc
+    col.add :purchaser, item.purchaser.login
+    col.add "录入人",   item.user.login
+    col.add :action,  link_to("delete",admin_input_bill_path(item),{:method=>:delete})  
+}%>

@@ -1,0 +1,14 @@
+<br/>
+<div class="right_align">
+    <%= link_to("create",new_admin_material_path,{:class=>"popup"})%>
+</div>
+<h3>品牌列表</h3>
+<%=notice%>
+<%= table_for(@materials) {|item,col|
+    col.add :code,item.show_name
+    col.add :m_type, ListItem.name_by_type_and_value("m_type",item.m_type)  #in_place_editor_field(:material,:m_type,{},{:collection=>ListItem.inplace_select_list_of("m_type")})
+    col.add :m_class,  ListItem.name_by_type_and_value("m_class",item.m_class) #in_place_editor_field(:material,:m_class,{},{:collection=>ListItem.inplace_select_list_of("m_class")})
+    col.add :sub_class, ListItem.name_by_type_and_value("sub_class",item.sub_class) #in_place_editor_field(:material,:sub_class,{},{:collection=>ListItem.inplace_select_list_of("sub_class")})
+    col.add :diameter,  ListItem.name_by_type_and_value("diameter",item.diameter) #in_place_editor_field(:material,:diameter)
+    col.add :action,  link_to("delete",admin_material_path(item),{:method=>:delete})  
+}%>

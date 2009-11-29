@@ -63,4 +63,25 @@ module ApplicationHelper
   end
   
   
+  def view_tabs(selected_index = 1, &block)
+    concat(%{<div id="tabViews">})
+    yield
+    concat(%{</div>})
+    unless @view_tab_names.blank?
+      concat(%{<script type="text/javascript">
+                  initTabs('tabViews',Array(#{@view_tab_names.join(",")}),#{(selected_index||1).to_i - 1}, '100%', '100%');
+              </script>})
+    end
+  end
+  
+  def view_tab(title, &block)
+    @view_tab_names ||= []
+    @view_tab_names << "'#{title}'"
+    concat(%{<div class="dhtmlgoodies_aTab">})
+    yield
+    concat(%{</div>})
+  end
+  
+  
+  
 end

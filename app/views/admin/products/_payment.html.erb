@@ -1,0 +1,12 @@
+<div class="right_align">
+    <%= link_to("新建",new_admin_payment_path(:product_id=>@product.id),{:class=>"popup"})%>
+</div>
+<%=notice%>
+<%= table_for(@product.payments) {|item,col|
+    @payment = item
+    col.add "金额", item.amount
+    col.add "方式", ListItem.name_by_type_and_value("pay_method",item.pay_method)
+    col.add "日期", item.pay_at.try(:strftime,"%Y-%m-%d")
+    col.add "付费人", item.pay_man
+    col.add :action,  link_to("删除",admin_payment_path(:product_id=>@product.id,:id=>item.id),{:method=>:delete})  
+}%>

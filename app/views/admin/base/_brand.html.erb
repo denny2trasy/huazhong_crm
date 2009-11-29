@@ -1,0 +1,6 @@
+<div class= "graybox">
+        <p><b>请选择品牌</b><span style="color:red" id="brand_info">&nbsp;</span></p>
+        <p>名称 : <%= select_tag "brand[name]", options_for_select(ListItem.select_list_of("brand_name"),nil) %> 
+        型号 : <%= select_tag "brand[style]", options_for_select(ListItem.select_list_of("brand_style"),nil) %>
+        排量 : <%= select_tag "brand[capacity]", options_for_select(ListItem.select_list_of("capacity"),nil) %></p>        
+</div>

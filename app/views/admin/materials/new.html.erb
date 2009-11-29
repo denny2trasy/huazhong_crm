@@ -1,0 +1,18 @@
+<div> 
+  <h1>创建新材料</h1> 
+
+      <% form_for :material, :url=>admin_materials_path() do |f| %> 
+
+        <p>名称      <%= f.text_field :name  %></p> 
+  
+        <p>类别       <%= f.select :m_type, ListItem.select_list_of("m_type") %></p> 
+  
+        <p>第一子类别       <%= f.select :m_class, ListItem.select_list_of("m_class") %></p>
+
+        <p>第二子类别       <%= f.select :sub_class, ListItem.select_list_of("sub_class") %></p>
+
+        <p>直径       <%= f.select :diameter, ListItem.select_list_of("diameter") %></p>
+  
+              <p><%= submit_tag "create"%> </p> 
+            <% end %> 
+</div> 

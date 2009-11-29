@@ -1,0 +1,40 @@
+<div class="info side300">
+  <table>
+    <tr>
+      <th>名称</th>
+      <td><%=@product.name%></td>
+    </tr>
+    <tr>
+      <th>客户</th>
+      <td><%=@product.customer_name%></td>
+    </tr>
+    <tr>
+      <th>客户电话</th>
+      <td><%=@product.customer_phone%></td>
+    </tr>
+    <tr>
+      <th>产品类别</th>
+      <td><%=ListItem.name_by_type_and_value("p_class",@product.p_class) %></td>
+    </tr>
+    <tr>
+      <th>状态</th>
+      <td><%=ListItem.name_by_type_and_value("status",@product.status)%></td>
+    </tr>
+    <tr>
+      <th>负责人</th>
+      <td><%=@product.user.login%></td>
+    </tr>
+    <tr>
+      <th>录入人</th>
+      <td><%=@product.register.login%></td>
+    </tr>
+    <tr>
+      <th>来件日期</th>
+      <td><%=@product.started_at.strftime("%Y-%m-%d")%></td>
+    </tr>
+    <tr>
+      <th>完成日期</th>
+      <td><%=@product.finished_at.try(:strftime,"%Y-%m-%d")%></td>
+    </tr>
+  </table>
+</div>

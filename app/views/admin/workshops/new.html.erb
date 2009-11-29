@@ -1,0 +1,11 @@
+<div> 
+  <h1>创建车间</h1> 
+
+      <% form_for :workshop, :url=>admin_workshops_path do |f| %> 
+
+        <p>名称      <%= f.text_field :name  %></p> 
+  
+        <p>负责人      <%= f.select :user_id,User.select_list  %></p> 
+              <p><%= submit_tag "create"%> </p> 
+            <% end %> 
+</div> 

@@ -1,0 +1,14 @@
+<div> 
+  <h1>创建入库单</h1> 
+
+      <% form_for :warehouse_voucher, :url=>admin_input_bills_path,:html=>{:onsubmit=>"return check_input_bill();"} do |f| %> 
+
+            <%= render  :partial => "/admin/base/material"%><br/>     
+            <%= render  :partial => "/admin/base/brand"%> <br/>           
+            <p>数量 : <%= f.text_field :amount,:size =>5  %>
+            单价 : <%= f.text_field :unit_price,:size =>5  %>
+            购买人 : <%= f.select :purchaser_id,User.select_list  %></p>            
+            <p>备注 : <%= f.text_area :desc,:size =>"40*3"  %></p>
+            <p><%= submit_tag "create"%><span style="color:red" id="input_info">&nbsp;</span></p> 
+            <% end %> 
+</div> 

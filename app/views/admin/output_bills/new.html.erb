@@ -1,0 +1,15 @@
+<div> 
+  <h1>创建出库单</h1> 
+
+      <% form_for :delivery_voucher, :url=>admin_output_bills_path,:html=>{:onsubmit=>"return check_output_bill();"} do |f| %> 
+
+            <%= render  :partial => "/admin/base/material"%><br/>     
+            <%= render  :partial => "/admin/base/brand"%> <br/>           
+            <p>数量 : <%= f.text_field :amount,:size =>5  %>
+            领件人 : <%= f.select :receiver_id,User.select_list  %> 
+            用途 ：<%= hidden_field_tag "delivery_voucher[owner_type]",@owner_type%>
+              <%= f.select :owner_id,@owner_list%></p>
+            <p>备注 : <%= f.text_area :desc,:size =>"40*3"  %></p>
+            <p><%= submit_tag "create"%><span style="color:red" id="input_info">&nbsp;</span></p> 
+            <% end %> 
+</div> 

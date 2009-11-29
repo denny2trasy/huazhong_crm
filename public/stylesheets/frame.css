@@ -907,8 +907,8 @@ input.input_button:active { background-position: 0px -72px;}
 .list_table tr.group td {background-color: #eee;font-weight:bold;font-size:13px;}
 .list_table .border2px{border-left:2px solid #DCE7F1;}
 .list_table a{padding:0 5px;}
-.list_table th.asc{background:#577BBF url(../images/idp_views/arrow_down.gif) no-repeat right;}
-.list_table th.desc{background:#577BBF url(../images/idp_views/arrow_up.gif) no-repeat right;}
+.list_table th.asc{background:#577BBF url(../images/arrow_down.gif) no-repeat right;}
+.list_table th.desc{background:#577BBF url(../images/arrow_up.gif) no-repeat right;}
 .list_table th a{color:white;text-decoration:underline;}
 .list_table_page{padding:5px;text-align:center;}
 
@@ -990,7 +990,7 @@ ul.list_style1 li:hover {
 .items_for_select label:hover{cursor:pointer;}
 
 #block{padding: 0 10px 5px 10px;border: 1px solid silver;width:400px;margin:5px;}
-#block h1{background:#eee url(../images/idp_views/bg.gif) repeat-x;margin:0 -10px 0 -10px;font-size:12px;padding:4px;border-bottom:1px dotted silver;}
+#block h1{background:#eee url(../images/bg.gif) repeat-x;margin:0 -10px 0 -10px;font-size:12px;padding:4px;border-bottom:1px dotted silver;}
 #block h1 a{font-weight:normal;text-decoration:none;color:blue;padding-left:10px;}
 #block li{padding:5px 0 5px 0;}
 #block p{margin:8px ;}
@@ -998,8 +998,8 @@ ul.list_style1 li:hover {
 .folder_title{color: #315391;font-weight:bold;font-size:13px;border-bottom:1px solid #6486C4;padding:3px;margin-top:10x;position:relative;cursor:pointer;}
 .folder_title .text{color:black;margin-left:10px;font-weight:normal;font-size:12px;}
 .folder_content{padding-left:20px;padding-top:3px;}
-.expand{background:url(../images/idp_views/minus.gif) no-repeat left;}
-.collapse{background:#eee url(../images/idp_views/plus.gif) no-repeat left;}
+.expand{background:url(../images/minus.gif) no-repeat left;}
+.collapse{background:#eee url(../images/plus.gif) no-repeat left;}
 
 .overlist {position:relative;z-index:20;display:inline;text-align:right;}
 .overlist ul li a {display:block; text-decoration:none;height:26px;line-height:26px;padding:0 5px;}
@@ -1089,18 +1089,18 @@ ul.list_style1 li:hover {
   margin-right:0px;
 }
 .dhtmlgoodies_tabPane .tabActive{
-  background-image:url('../images/idp_views/tab_left_active.gif');
+  background-image:url('../images/tab_left_active.gif');
   margin-left:3px;
   margin-right:3px;
 }
 .dhtmlgoodies_tabPane .tabInactive{
-  background-image:url('../images/idp_views/tab_left_inactive.gif');
+  background-image:url('../images/tab_left_inactive.gif');
   margin-left:0px;
   margin-right:0px;
 }
 
 .dhtmlgoodies_tabPane .inactiveTabOver{
-  background-image:url('../images/idp_views/tab_left_over.gif');
+  background-image:url('../images/tab_left_over.gif');
   margin-left:0px;
   margin-right:0px;
 }

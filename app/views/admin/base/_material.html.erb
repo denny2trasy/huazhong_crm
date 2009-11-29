@@ -1,0 +1,7 @@
+<div class= "graybox">
+        <p><b>请选择材料</b><span style="color:red" id="material_info">&nbsp;</span></p>
+        <p>种别 : <%= select_tag "material[m_type]", options_for_select(ListItem.select_list_of("m_type"),nil) %> 
+        类别1 : <%= select_tag "material[m_class]", options_for_select(ListItem.select_list_of("m_class"),nil) %>
+        类别2 : <%= select_tag "material[sub_class]", options_for_select(ListItem.select_list_of("sub_class"),nil) %>
+        直径 : <%= select_tag "material[diameter]" , options_for_select(ListItem.select_list_of("diameter"),nil) %></p>        
+</div>

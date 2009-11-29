@@ -8,7 +8,16 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :sessions
   
   map.namespace :admin do |admin|
+    admin.resources :products
+    admin.resources :payments
+    admin.resources :input_bills
+    admin.resources :output_bills
+    admin.resources :workshops
+    admin.resources :equipments
+    admin.resources :materials
     admin.resources :brands
+    admin.resources :list_types
+    admin.resources :list_items
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

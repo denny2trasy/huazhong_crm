@@ -5,9 +5,11 @@
 <h3>品牌列表</h3>
 <%=notice%>
 <%= table_for(@brands) {|item,col|
-    col.add :name,item.name
-    col.add :style,item.style
-    col.add :capacity,  item.capacity
-    col.add :desc,  item.desc
-    col.add :action,  link_to("edit",edit_admin_brand_path(item)) + link_to("delete",admin_brand_path(item),{:method=>:delete})  
+    @brand = item
+    col.add :code,  item.show_name
+    col.add :name, ListItem.name_by_type_and_value("brand_name",item.name) #ListItem.find_by_id(item.name).name in_place_editor_field(:brand,:name)
+    col.add :style,ListItem.name_by_type_and_value("brand_style",item.style) #ListItem.find_by_id(item.style).name in_place_editor_field(:brand,:style)
+    col.add :capacity,  ListItem.name_by_type_and_value("capacity",item.capacity) #ListItem.find_by_id(item.capacity).name in_place_editor_field(:brand,:capacity)
+    col.add :desc,  in_place_editor_field(:brand,:desc)
+    col.add :action,  link_to("delete",admin_brand_path(item),{:method=>:delete})  
 }%>
